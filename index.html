@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Animated Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+            height: 100vh;
+
+            /* Mixed Background */
+            background: linear-gradient(135deg, blue, black, red);
+            background-size: 400% 400%;
+            animation: bgMove 8s infinite alternate;
+        }
+
+        /* Background animation */
+        @keyframes bgMove {
+            0% { background-position: left; }
+            100% { background-position: right; }
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Animated Name */
+        .animated-name {
+            font-size: 50px;
+            font-weight: bold;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { 
+                text-shadow: 0 0 10px blue, 0 0 20px red; 
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 0 0 20px red, 0 0 40px blue; 
+                transform: scale(1.1);
+            }
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: lightgray;
+        }
+
+        a {
+            color: yellow;
+            font-size: 20px;
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page 1 -->
+    <div id="page1" class="page active">
+        <!-- ✨ CHANGE YOUR NAME HERE ✨ -->
+        <div class="animated-name">david for diffrent videos</div>
+
+        <p>Welcome to my website 🔥</p>
+        <button onclick="showPage2()">Go To Second Page</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" class="page">
+        <h1>Second Page 🚀</h1>
+        <p>subscribe.</p>
+
+        <a href="https://youtube.com/@davidmouradvs6iv?si=YEqJ5X70FtG3yoAI" target="_blank">
+            Visit My Link
+        </a>
+
+        <button onclick="showPage1()">Go Back</button>
+    </div>
+
+    <script>
+        function showPage2() {
+            document.getElementById("page1").classList.remove("active");
+            document.getElementById("page2").classList.add("active");
+        }
+
+        function showPage1() {
+            document.getElementById("page2").classList.remove("active");
+            document.getElementById("page1").classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
